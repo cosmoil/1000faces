@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnTakePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take Photo" />
+
+    <ImageView
+        android:id="@+id/cameraPreviewImage"
+        android:layout_width="match_parent"
+        android:layout_height="473dp"
+        android:layout_below="@id/btnTakePhoto"
+        android:layout_marginTop="46dp"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/btnBackFromCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← Back"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"/>
+
+</RelativeLayout>
