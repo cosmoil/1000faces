@@ -35,12 +35,14 @@ public class TimelapseController {
     private static final int HEIGHT = 720;
     private static final int BIT_RATE = 2_000_000;
 
-    public void exportTimelapse(Context context, List<ImageModel> imageList, ExportCallback callback) {
+    public void exportTimelapse(Context context, List<ImageModel> imageList, String filename, ExportCallback callback) {
         new Thread(() -> {
             MediaCodec mediaCodec = null;
             MediaMuxer mediaMuxer = null;
             Surface inputSurface = null;
-            File outputFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "timelapse.mp4");
+
+            // ⬇ Neuer Dateiname statt hartkodiert
+            File outputFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename + ".mp4");
 
             try {
                 MediaFormat mediaFormat = MediaFormat.createVideoFormat(MIME_TYPE, WIDTH, HEIGHT);

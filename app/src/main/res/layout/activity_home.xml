@@ -2,32 +2,61 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="#F3F3F3">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/logo"
+        android:contentDescription="App Logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/appTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000 FACES"
+        android:textColor="#000000"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:text="Camera"
+        android:textStyle="bold"
         app:backgroundTint="#FFFFFF"
         android:textColor="#040404"
         app:cornerRadius="8dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="48dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        />
+        android:layout_marginRight="50dp" />
 
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:text="Gallery"
+        android:textStyle="bold"
         app:backgroundTint="#FFFFFF"
         android:textColor="#040404"
         app:cornerRadius="8dp"
@@ -36,13 +65,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        />
+        android:layout_marginRight="50dp" />
 
     <Button
         android:id="@+id/btnExport"
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:textStyle="bold"
         android:text="Export Timelapse"
         android:textColor="#040404"
         app:backgroundTint="#FFFFFF"
@@ -52,23 +81,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        />
+        android:layout_marginRight="50dp" />
 
     <Button
-    android:id="@+id/btnSettings"
-    android:layout_width="0dp"
-    android:layout_height="100dp"
-    android:text="Settings"
-    android:textColor="#040404"
-    app:backgroundTint="#FFFFFF"
-    android:elevation="8dp"
-    app:cornerRadius="8dp"
-    app:layout_constraintTop_toBottomOf="@id/btnExport"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_marginTop="16dp"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp" />
+        android:id="@+id/btnSettings"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:text="Settings"
+        android:textColor="#040404"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        android:elevation="8dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/btnExport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
