@@ -2,54 +2,70 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".view.GalleryActivity">
+    android:background="#F3F3F3">
 
-    <GridView
-        android:id="@+id/galleryGrid"
+    <!-- Scrollable grid inside ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:numColumns="3"
-        android:verticalSpacing="8dp"
-        android:horizontalSpacing="8dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottomButtons"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <GridView
+            android:id="@+id/galleryGrid"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:verticalSpacing="8dp"
+            android:horizontalSpacing="8dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"
+            android:isScrollContainer="false"
+            android:scrollingCache="false" />
+    </ScrollView>
+
+    <!-- Fixed bottom buttons -->
     <LinearLayout
         android:id="@+id/bottomButtons"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:weightSum="2">
+        android:layout_margin="16dp">
 
         <Button
             android:id="@+id/btnBackFromGallery"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="← Back" />
+            android:text="← Back"
+            app:backgroundTint="#FFFFFF"
+            android:textColor="#040404"
+            app:cornerRadius="8dp"
+            android:layout_marginRight="8dp" />
+            />
 
         <Button
             android:id="@+id/btnEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Edit" />
+            android:text="Edit"
+            app:backgroundTint="#FFFFFF"
+            android:textColor="#040404"
+            app:cornerRadius="8dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
