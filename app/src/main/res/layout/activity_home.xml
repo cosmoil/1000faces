@@ -10,41 +10,64 @@
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="Camera"
+        android:backgroundTint="#F4F1EB"
+        android:textColor="#040404"
+        android:background="@drawable/button_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
 
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="10000dp"
         android:text="Gallery"
+        android:backgroundTint="#F4F1EB"
+        android:textColor="#040404"
+        android:background="@drawable/button_background"
         app:layout_constraintTop_toBottomOf="@id/btnCamera"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
 
     <Button
         android:id="@+id/btnExport"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="Export Timelapse"
+        android:textColor="#040404"
+        android:background="@drawable/button_background"
         app:layout_constraintTop_toBottomOf="@id/btnGallery"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
 
     <Button
         android:id="@+id/btnSettings"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="Settings"
+        android:backgroundTint="#F4F1EB"
+        android:textColor="#040404"
+        android:background="@drawable/button_background"
         app:layout_constraintTop_toBottomOf="@id/btnExport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
