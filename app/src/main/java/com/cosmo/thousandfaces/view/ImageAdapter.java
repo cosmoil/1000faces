@@ -1,6 +1,7 @@
 package com.cosmo.thousandfaces.view;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,6 +10,7 @@ import com.cosmo.thousandfaces.R;
 import com.cosmo.thousandfaces.model.ImageModel;
 import android.graphics.BitmapFactory;
 
+import java.io.File;
 import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
@@ -61,11 +63,14 @@ public class ImageAdapter extends BaseAdapter {
         deleteIcon.setVisibility(isEditMode ? View.VISIBLE : View.GONE);
 
         deleteIcon.setOnClickListener(v -> {
-            // Delete from filesystem
-            java.io.File file = new java.io.File(path);
+            File file = new File(path);
             if (file.exists()) {
-                file.delete();
+                boolean deleted = file.delete();
+                if (!deleted) {
+                    Log.e("ImageAdapter", "Failed to delete file: " + file.getAbsolutePath());
+                }
             }
+
             // Remove from list and update
             images.remove(position);
             notifyDataSetChanged();
