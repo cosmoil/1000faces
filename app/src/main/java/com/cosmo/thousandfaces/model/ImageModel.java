@@ -1,7 +1,7 @@
 package com.cosmo.thousandfaces.model;
 
 public class ImageModel {
-    private String imagePath;
+    private final String imagePath;
 
     public ImageModel(String imagePath) {
         this.imagePath = imagePath;

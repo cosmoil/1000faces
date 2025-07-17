@@ -26,6 +26,13 @@ public class ImageController {
             }
         }
 
+        //  Sortieren nach Änderungsdatum
+        images.sort((img1, img2) -> {
+            File file1 = new File(img1.getImagePath());
+            File file2 = new File(img2.getImagePath());
+            return Long.compare(file1.lastModified(), file2.lastModified());
+        });
+
         return images;
     }
 }
