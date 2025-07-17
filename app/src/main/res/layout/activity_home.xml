@@ -26,7 +26,7 @@
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="0dp"
-        android:layout_height="10000dp"
+        android:layout_height="100dp"
         android:text="Gallery"
         android:backgroundTint="#F4F1EB"
         android:textColor="#040404"
