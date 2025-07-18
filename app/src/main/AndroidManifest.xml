@@ -24,6 +24,10 @@
         <activity android:name=".view.GalleryActivity" />
         <activity android:name=".view.ExportActivity" />
         <activity android:name=".view.SettingsActivity" />
+        <activity
+            android:name=".view.RegistrationActivity"
+            android:exported="false"
+            android:label="Register"/>
         <activity android:name=".view.CameraActivity" />
         <provider
             android:name="androidx.core.content.FileProvider"
