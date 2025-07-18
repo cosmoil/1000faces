@@ -23,7 +23,6 @@
         <activity android:name=".view.HomeActivity" />
         <activity android:name=".view.GalleryActivity" />
         <activity android:name=".view.ExportActivity" />
-        <activity android:name=".view.SettingsActivity" />
         <activity
             android:name=".view.RegistrationActivity"
             android:exported="false"
