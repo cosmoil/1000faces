@@ -2,9 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
     android:background="#F3F3F3">
-
 
     <Button
         android:id="@+id/btnTakePhoto"
@@ -18,15 +16,34 @@
         android:layout_marginTop="46dp"
         android:stateListAnimator="@null"
         android:elevation="8dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
         />
 
+    <!-- Illustration unter der Kamera-Preview -->
+    <ImageView
+        android:id="@+id/selfieBackground"
+        android:layout_width="match_parent"
+        android:layout_height="473dp"
+        android:layout_below="@id/btnTakePhoto"
+        android:layout_marginTop="46dp"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:src="@drawable/selfietime"
+        android:contentDescription="Selfie illustration" />
+
+    <!-- Kamera-Preview liegt darüber -->
     <ImageView
         android:id="@+id/cameraPreviewImage"
         android:layout_width="match_parent"
         android:layout_height="473dp"
         android:layout_below="@id/btnTakePhoto"
         android:layout_marginTop="46dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/btnBackFromCamera"
