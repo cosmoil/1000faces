@@ -13,32 +13,30 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottomButtons"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomButtons"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <GridView
             android:id="@+id/galleryGrid"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
-            android:numColumns="3"
-            android:verticalSpacing="8dp"
-            android:horizontalSpacing="8dp"
-            android:stretchMode="columnWidth"
+            android:layout_marginTop="20dp"
             android:gravity="center"
+            android:horizontalSpacing="8dp"
             android:isScrollContainer="false"
-            android:scrollingCache="false" />
+            android:numColumns="3"
+            android:scrollingCache="false"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="8dp" />
     </ScrollView>
 
-    <!-- Fixed bottom buttons -->
     <LinearLayout
         android:id="@+id/bottomButtons"
         android:layout_width="378dp"
         android:layout_height="77dp"
-        android:background="#F3F3F3"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:gravity="center"
@@ -46,7 +44,8 @@
         android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        >
         >
 
         <Button

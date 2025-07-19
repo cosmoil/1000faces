@@ -24,6 +24,7 @@ public class TimelapseController {
     public interface ExportCallback {
         void onSuccess(String path);
         void onFailure(String error);
+
     }
 
     private static final String TAG = "TimelapseController";
@@ -32,7 +33,7 @@ public class TimelapseController {
     private static final int IFRAME_INTERVAL = 1;
     private static final int TIMEOUT_USEC = 10000;
     private static final int WIDTH = 720;
-    private static final int HEIGHT = 720;
+    private static final int HEIGHT = 960;
     private static final int BIT_RATE = 2_000_000;
 
     public void exportTimelapse(Context context, List<ImageModel> imageList, String filename, ExportCallback callback) {
