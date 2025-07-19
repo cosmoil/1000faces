@@ -2,12 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F3F3F3">
 
-    <!-- Scrollable grid inside ScrollView -->
+
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
@@ -46,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         >
-        >
+
 
         <Button
             android:id="@+id/btnBackFromGallery"
@@ -60,7 +59,7 @@
             android:textColor="#040404"
             app:backgroundTint="#FFFFFF"
             app:cornerRadius="8dp" />
-        />
+
 
         <Button
             android:id="@+id/btnEdit"
