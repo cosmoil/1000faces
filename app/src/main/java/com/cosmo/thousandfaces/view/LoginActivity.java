@@ -12,10 +12,10 @@ import com.cosmo.thousandfaces.controller.LoginController;
 
 public class LoginActivity extends Activity {
 
-    private EditText editUsername, editPassword;
-    private Button loginBtn;
-    private TextView registerLink;
-    private LoginController loginController;
+    EditText editUsername, editPassword;
+    Button loginBtn;
+    TextView registerLink;
+    LoginController loginController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,38 +30,35 @@ public class LoginActivity extends Activity {
 
         loginController = new LoginController(this);
 
-        // Check if coming from registration
+        // Autofill username if coming from registration
         String registeredUsername = getIntent().getStringExtra("registered_username");
-        if (registeredUsername != null) {
-            editUsername.setText(registeredUsername);
-        }
+        if (registeredUsername != null) editUsername.setText(registeredUsername);
 
-        // Login button click listener
-        loginBtn.setOnClickListener(view -> {
-            String username = editUsername.getText().toString().trim();
-            String password = editPassword.getText().toString();
+        // Login Button
+        loginBtn.setOnClickListener(v -> handleLogin());
 
-            if (validateInput(username, password)) {
-                if (loginController.validateLogin(username, password)) {
-                    Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-
-                    // Start home activity
-                    Intent intent = new Intent(this, HomeActivity.class);
-                    intent.putExtra("username", username);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                    editPassword.setText(""); // Clear password field
-                }
-            }
-        });
-
-        // Register link click listener
-        registerLink.setOnClickListener(view -> {
+        // Register link
+        registerLink.setOnClickListener(v -> {
             startActivity(new Intent(this, RegistrationActivity.class));
             finish();
         });
+    }
+
+    private void handleLogin() {
+        String username = editUsername.getText().toString().trim();
+        String password = editPassword.getText().toString();
+
+        if (validateInput(username, password)) {
+            if (loginController.validateLogin(username, password)) {
+                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, HomeActivity.class)
+                        .putExtra("username", username));
+                finish();
+            } else {
+                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+                editPassword.setText(""); // Clear password
+            }
+        }
     }
 
     private boolean validateInput(String username, String password) {
@@ -70,13 +67,11 @@ public class LoginActivity extends Activity {
             editUsername.requestFocus();
             return false;
         }
-
         if (password.isEmpty()) {
             editPassword.setError("Password is required");
             editPassword.requestFocus();
             return false;
         }
-
         return true;
     }
 }

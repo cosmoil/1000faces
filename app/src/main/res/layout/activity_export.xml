@@ -45,7 +45,9 @@
         android:textStyle="bold"
         app:backgroundTint="#FFFFFF"
         android:textColor="#008000"
-        app:cornerRadius="8dp" />
+        app:cornerRadius="8dp"
+        android:stateListAnimator="@null"
+        android:elevation="8dp"/>
 
     <ProgressBar
         android:id="@+id/progressExport"
@@ -68,5 +70,7 @@
         android:layout_marginBottom="24dp"
         app:backgroundTint="#FFFFFF"
         android:textColor="#040404"
-        app:cornerRadius="8dp" />
+        app:cornerRadius="8dp"
+        android:stateListAnimator="@null"
+        android:elevation="8dp"/>
 </RelativeLayout>

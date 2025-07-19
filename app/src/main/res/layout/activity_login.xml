@@ -69,19 +69,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editUsername" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Login"
-        android:textColor="#040404"
         app:backgroundTint="#FFFFFF"
+        android:textStyle="bold"
+        android:textColor="#040404"
         app:cornerRadius="8dp"
+        android:elevation="8dp"
+        android:stateListAnimator="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editPassword"
-        />
+        app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
     <TextView
         android:id="@+id/registerLink"
