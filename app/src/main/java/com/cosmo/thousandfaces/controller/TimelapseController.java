@@ -42,7 +42,6 @@ public class TimelapseController {
             MediaMuxer mediaMuxer = null;
             Surface inputSurface = null;
 
-            // ⬇ Neuer Dateiname statt hartkodiert
             File outputFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename + ".mp4");
 
             try {

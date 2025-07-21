@@ -35,13 +35,12 @@ public class CameraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
-        // Laufzeitberechtigung für Kamera abfragen
+        // Request camera permission at runtime
         if (checkSelfPermission(android.Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{android.Manifest.permission.CAMERA}, 100);
         }
 
         imageView = findViewById(R.id.cameraPreviewImage);
-
         takePhotoButton = findViewById(R.id.btnTakePhoto);
         btnBack = findViewById(R.id.btnBackFromCamera);
 
@@ -62,17 +61,17 @@ public class CameraActivity extends AppCompatActivity {
                             if (data != null && data.getExtras() != null) {
                                 Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
 
-                                // Bild speichern
+                                // Save image
                                 File imageFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),
                                         "captured_" + System.currentTimeMillis() + ".jpg");
                                 try (FileOutputStream fos = new FileOutputStream(imageFile)) {
                                     imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-                                    Toast.makeText(CameraActivity.this, "Bild gespeichert in: " + imageFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CameraActivity.this, "Image saved at: " + imageFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
                                 } catch (IOException e) {
-                                    Toast.makeText(CameraActivity.this, "Fehler beim Speichern", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CameraActivity.this, "Error saving image", Toast.LENGTH_SHORT).show();
                                 }
 
-                                // Vorschau anzeigen
+                                // Show preview
                                 if (imageBitmap != null) {
                                     WeakReference<Bitmap> resultRef = new WeakReference<>(
                                             Bitmap.createScaledBitmap(imageBitmap,
@@ -80,15 +79,13 @@ public class CameraActivity extends AppCompatActivity {
                                                     imageBitmap.getHeight(),
                                                     false).copy(Bitmap.Config.RGB_565, true));
                                     imageView.setImageBitmap(resultRef.get());
-                                    Toast.makeText(CameraActivity.this, "Foto aufgenommen!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(CameraActivity.this, "Photo taken!", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         } else {
-                            Toast.makeText(CameraActivity.this, "Kamera abgebrochen", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CameraActivity.this, "Camera cancelled", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-
-
     }
 }

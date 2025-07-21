@@ -37,7 +37,11 @@ public class ExportActivity extends AppCompatActivity {
         btnExport.setOnClickListener(v -> {
             String filename = editFilename.getText().toString().trim();
             if (filename.isEmpty()) {
-                Toast.makeText(this, "Bitte einen Dateinamen eingeben", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter a file name.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (filename.contains(".")) {
+                Toast.makeText(this, "The file name must not contain a dot.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -55,7 +59,7 @@ public class ExportActivity extends AppCompatActivity {
                         progressExport.setVisibility(View.GONE);
                         btnExport.setEnabled(true);
                         btnBack.setEnabled(true);
-                        Toast.makeText(ExportActivity.this, "Exportiert nach: " + path, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ExportActivity.this, "Exported to: " + path, Toast.LENGTH_LONG).show();
                     });
                 }
 
@@ -65,7 +69,7 @@ public class ExportActivity extends AppCompatActivity {
                         progressExport.setVisibility(View.GONE);
                         btnExport.setEnabled(true);
                         btnBack.setEnabled(true);
-                        Toast.makeText(ExportActivity.this, "Fehler: " + error, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ExportActivity.this, "Error: " + error, Toast.LENGTH_LONG).show();
                     });
                 }
             });
