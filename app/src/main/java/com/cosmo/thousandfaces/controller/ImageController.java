@@ -26,7 +26,7 @@ public class ImageController {
             }
         }
 
-        //  Sortieren nach Änderungsdatum
+        //  Sort by Date
         images.sort((img1, img2) -> {
             File file1 = new File(img1.getImagePath());
             File file2 = new File(img2.getImagePath());
