@@ -1,5 +1,7 @@
 # 1000faces – Timelapse Selfie Journal
 
+Name: Cosmo Ilin
+
 1000faces is a minimalist Android app that allows users to capture one selfie per day and later generate a personal timelapse video. 
 The app focuses on simplicity, privacy, and long-term self-reflection by encouraging users to document their faces over time.
 
