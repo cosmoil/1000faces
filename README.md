@@ -2,6 +2,10 @@
 
 Name: Cosmo Ilin (both bombayy and cosmoil are my accounts they are just different devices)
 
+<p align="center">
+  <img src="app/src/main/ic_launcher-playstore.png" alt="1000faces Logo" width="180"/>
+</p>
+
 1000faces is a minimalist Android app that allows users to capture one selfie per day and later generate a personal timelapse video. 
 The app focuses on simplicity, privacy, and long-term self-reflection by encouraging users to document their faces over time.
 
